@@ -13,8 +13,7 @@ RUN cd /tmp &&\
     apt-get update && apt-get install --no-install-recommends -y wget adduser bzip2 &&\
     wget --no-check-certificate  -Ofahclient.deb https://download.foldingathome.org/releases/public/release/fahclient/debian-stable-64bit/v7.5/fahclient_7.5.1_amd64.deb &&\
 	# echo -e '#!/bin/bash \nset -e \nexit 0;' > /var/lib/dpkg/info/fahclient.postinst &&\
-    dpkg -i --force-depends fahclient.deb &&\
-	exit 0
+    dpkg -i --force-depends fahclient.deb; exit 0
 
 # expose port for webservice
 EXPOSE 7396
